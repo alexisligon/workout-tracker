@@ -41,7 +41,6 @@ router.get('/api/workouts/range', (req, res) => {
                 ...workout.toObject()
             }
         })
-        console.log(workouts)
         res.json(workouts);
 
     })
