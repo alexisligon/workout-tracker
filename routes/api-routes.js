@@ -7,6 +7,7 @@ router.get('/api/workouts', (req, res) => {
     db.Workout.find({})
         .then(dbWorkout => { res.json(dbWorkout); })
         .catch(err => { res.json(err); })
+        console.log(duration)
 });
 
 // post a new workout
@@ -29,14 +30,25 @@ router.put('/api/workouts/:id', (req, res) => {
 // get for the range
 
 router.get('/api/workouts/range', (req, res) => {
-    db.Workout.aggregate(
-        [
-            {
-              $addFields: { totalDuration: 'something'}
-              // add total duration from all exercises here????
-              }
-          ] 
-    )
+    db.Workout.find({})
+    .then(dbWorkouts => {
+        const workouts = dbWorkouts.map(workout => {
+            const duration = workout.exercises.reduce((acc, next) => {
+                return acc + next.duration;
+            }, 0);
+            return {
+                totalDuration: duration,
+                ...workout.toObject()
+            }
+        })
+        console.log(workouts)
+        res.json(workouts);
+
+    })
+    .catch(err => {
+        res.json(err)
+    })
+
 })
 
 module.exports = router;
