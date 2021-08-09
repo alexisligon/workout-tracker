@@ -6,6 +6,14 @@ For this assignment, I was tasked with developing the backend of a workout track
 
 https://protected-journey-14971.herokuapp.com/
 
+## NOTES TO GRADER!!!!
+
+  * The screen shots are after seeding and running on local host
+
+  * I included my deployed site link through heroku but it does not work the same
+
+  * I had alot of trouble with this homework and am still trying to wrap my head around some parts
+
 
 ## Acceptance Criteria
 
