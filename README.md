@@ -15,9 +15,15 @@ The user should be able to:
 
   * Add exercises to the most recent workout plan.
 
+    ![new-workout](./img/new-workout.png)
+
   * Add new exercises to a new workout plan.
 
+    ![page-load](./img/page-load.png)
+
   * View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
+
+    ![graphs](./img/graphs.png)
 
   * View the total duration of each workout from the past seven workouts on the `stats` page.
 
